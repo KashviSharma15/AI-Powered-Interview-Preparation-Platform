@@ -1,0 +1,122 @@
+[
+  {
+    "id": "se1",
+    "role": "Software Engineer",
+    "category": "Technical",
+    "question": "Explain the difference between a process and a thread, and when you would choose one over the other.",
+    "ideal_keywords": ["process", "thread", "memory", "isolated", "lightweight", "context switch", "shared", "concurrency", "parallel"],
+    "difficulty": "Medium"
+  },
+  {
+    "id": "se2",
+    "role": "Software Engineer",
+    "category": "Technical",
+    "question": "How would you design a URL shortening service like bit.ly? Walk me through your approach.",
+    "ideal_keywords": ["hash", "database", "collision", "encoding", "base62", "scalability", "cache", "redirect", "unique id"],
+    "difficulty": "Hard"
+  },
+  {
+    "id": "se3",
+    "role": "Software Engineer",
+    "category": "Technical",
+    "question": "What is the time complexity of common operations on a hash map, and how does a hash map achieve that?",
+    "ideal_keywords": ["hash function", "constant time", "collision", "bucket", "load factor", "average case", "worst case"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": "se4",
+    "role": "Software Engineer",
+    "category": "Behavioral",
+    "question": "Tell me about a time you disagreed with a teammate's technical decision. How did you handle it?",
+    "ideal_keywords": ["listened", "discussed", "compromise", "data", "evidence", "respectful", "team", "outcome", "learned"],
+    "difficulty": "Medium"
+  },
+  {
+    "id": "se5",
+    "role": "Software Engineer",
+    "category": "Behavioral",
+    "question": "Describe a project where you had to learn a completely new technology quickly. How did you approach it?",
+    "ideal_keywords": ["documentation", "practice", "small project", "asked questions", "deadline", "learned", "applied"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": "da1",
+    "role": "Data Analyst",
+    "category": "Technical",
+    "question": "How would you handle missing values in a dataset before running an analysis?",
+    "ideal_keywords": ["missing", "imputation", "mean", "median", "drop", "pattern", "impact", "distribution", "context"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": "da2",
+    "role": "Data Analyst",
+    "category": "Technical",
+    "question": "Explain the difference between correlation and causation, and why this matters in analysis.",
+    "ideal_keywords": ["correlation", "causation", "confounding", "relationship", "experiment", "controlled", "spurious"],
+    "difficulty": "Medium"
+  },
+  {
+    "id": "da3",
+    "role": "Data Analyst",
+    "category": "Technical",
+    "question": "How would you explain a complex analytical finding to a non-technical stakeholder?",
+    "ideal_keywords": ["simple language", "visualization", "story", "business impact", "avoid jargon", "context", "actionable"],
+    "difficulty": "Medium"
+  },
+  {
+    "id": "da4",
+    "role": "Data Analyst",
+    "category": "Behavioral",
+    "question": "Tell me about a time your analysis changed a business decision. What was the impact?",
+    "ideal_keywords": ["data", "insight", "recommendation", "stakeholder", "decision", "impact", "measured", "result"],
+    "difficulty": "Medium"
+  },
+  {
+    "id": "da5",
+    "role": "Data Analyst",
+    "category": "Behavioral",
+    "question": "Describe a situation where your initial analysis was wrong. How did you discover it and what did you do?",
+    "ideal_keywords": ["mistake", "reviewed", "corrected", "validated", "learned", "communicated", "transparent"],
+    "difficulty": "Medium"
+  },
+  {
+    "id": "hr1",
+    "role": "HR / Behavioral",
+    "category": "Behavioral",
+    "question": "Tell me about yourself and why you're interested in this role.",
+    "ideal_keywords": ["background", "experience", "skills", "motivated", "interested", "goals", "fit", "passion"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": "hr2",
+    "role": "HR / Behavioral",
+    "category": "Behavioral",
+    "question": "Describe a time you failed at something. What did you learn from it?",
+    "ideal_keywords": ["failure", "mistake", "learned", "responsibility", "improved", "growth", "reflection"],
+    "difficulty": "Medium"
+  },
+  {
+    "id": "hr3",
+    "role": "HR / Behavioral",
+    "category": "Behavioral",
+    "question": "How do you handle working under tight deadlines and pressure?",
+    "ideal_keywords": ["prioritize", "plan", "calm", "organized", "communicate", "focus", "manage time", "break down"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": "hr4",
+    "role": "HR / Behavioral",
+    "category": "Behavioral",
+    "question": "Where do you see yourself in five years?",
+    "ideal_keywords": ["growth", "goals", "skills", "leadership", "learning", "contribute", "career", "development"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": "hr5",
+    "role": "HR / Behavioral",
+    "category": "Behavioral",
+    "question": "Why should we hire you over other candidates?",
+    "ideal_keywords": ["skills", "experience", "unique", "value", "results", "fit", "contribute", "strengths"],
+    "difficulty": "Medium"
+  }
+]
