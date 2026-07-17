@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Rehearsal — Choose your role{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <p class="eyebrow">Mock interview studio</p>
+    <h1>Practice out loud,<br>before it counts.</h1>
+    <p class="hero-sub">
+        Pick a track, answer five questions by speaking into your mic, and get scored
+        on content, delivery, and presence — the same way a real interviewer would read you.
+    </p>
+</section>
+
+<section class="role-picker">
+    <form action="{{ url_for('start_session') }}" method="POST" id="role-form">
+        <div class="role-grid">
+            {% for role in roles %}
+            <label class="role-card">
+                <input type="radio" name="role" value="{{ role }}" {% if loop.first %}checked{% endif %}>
+                <span class="role-index">{{ "%02d"|format(loop.index) }}</span>
+                <span class="role-name">{{ role }}</span>
+                <span class="role-arrow">&#8594;</span>
+            </label>
+            {% endfor %}
+        </div>
+        <label class="ai-toggle">
+            <input type="checkbox" name="use_ai" {% if not api_key_configured %}disabled{% endif %}>
+            Generate fresh AI questions each session
+            {% if not api_key_configured %}
+                <span class="ai-toggle-note">(add an API key to .env to enable this — using local question bank)</span>
+            {% else %}
+                <span class="ai-toggle-note">(falls back to the local bank automatically if generation fails)</span>
+            {% endif %}
+        </label>
+        <button type="submit" class="btn-primary">Begin session</button>
+    </form>
+</section>
+
+<section class="how-it-works">
+    <h2>How a session runs</h2>
+    <ol class="steps">
+        <li><span class="step-label">Speak</span>Answer each question aloud — your mic is transcribed live with Whisper.</li>
+        <li><span class="step-label">Present</span>Your webcam gives a light read on engagement and expression while you talk.</li>
+        <li><span class="step-label">Review</span>Each answer is scored on relevance, keyword coverage, and delivery.</li>
+        <li><span class="step-label">Track</span>Every session is saved so you can watch your scores trend upward.</li>
+    </ol>
+</section>
+{% endblock %}

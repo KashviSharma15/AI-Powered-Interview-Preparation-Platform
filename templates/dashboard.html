@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Rehearsal — Progress{% endblock %}
+
+{% block content %}
+<section class="dashboard-header">
+    <p class="eyebrow">Your progress</p>
+    <h1>Every session, tracked.</h1>
+</section>
+
+<section class="chart-wrap">
+    <canvas id="trend-chart" height="90"></canvas>
+</section>
+
+<section class="sessions-table-wrap">
+    <table class="sessions-table" id="sessions-table">
+        <thead>
+            <tr>
+                <th>Session</th>
+                <th>Role</th>
+                <th>Date</th>
+                <th>Questions</th>
+                <th>Avg score</th>
+            </tr>
+        </thead>
+        <tbody id="sessions-tbody">
+        </tbody>
+    </table>
+    <p id="empty-state" class="empty-state" style="display:none;">
+        No sessions yet — <a href="{{ url_for('index') }}">start your first one</a>.
+    </p>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}

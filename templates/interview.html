@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Rehearsal — Question {{ question_number }}{% endblock %}
+
+{% block content %}
+<section class="interview-layout" id="interview-root"
+    data-session-id="{{ session_id }}"
+    data-question-id="{{ question.id }}"
+    data-question-text="{{ question.question }}"
+    data-ideal-keywords='{{ question.ideal_keywords | tojson }}'>
+
+    <div class="interview-main">
+        <p class="eyebrow">{{ role }} &middot; Question {{ question_number }} of {{ total_questions }}</p>
+        <h1 class="question-text">{{ question.question }}</h1>
+        <p class="question-meta">{{ question.category }} &middot; {{ question.difficulty }} difficulty</p>
+
+        <div class="record-panel">
+            <button id="record-btn" class="record-button">
+                <span class="record-dot"></span>
+                <span id="record-label">Start answer</span>
+            </button>
+            <p id="record-status" class="record-status">Ready when you are.</p>
+        </div>
+
+        <div class="transcript-box" id="transcript-box" style="display:none;">
+            <h3>Your answer (edit if needed)</h3>
+            <textarea id="transcript-text" rows="6" placeholder="Transcript will appear here..."></textarea>
+            <button id="submit-answer-btn" class="btn-primary">Submit answer</button>
+        </div>
+
+        <div class="score-box" id="score-box" style="display:none;">
+            <h3>Answer feedback</h3>
+            <div class="score-grid">
+                <div class="score-item"><span class="score-label">Overall</span><span class="score-value" id="score-overall">--</span></div>
+                <div class="score-item"><span class="score-label">Content relevance</span><span class="score-value" id="score-content">--</span></div>
+                <div class="score-item"><span class="score-label">Keyword coverage</span><span class="score-value" id="score-coverage">--</span></div>
+                <div class="score-item"><span class="score-label">Engagement</span><span class="score-value" id="score-engagement">--</span></div>
+                <div class="score-item"><span class="score-label">Expression</span><span class="score-value" id="score-smile">--</span></div>
+                <div class="score-item"><span class="score-label">Filler words</span><span class="score-value" id="score-filler">--</span></div>
+            </div>
+            <a href="{{ url_for('interview', session_id=session_id) }}" class="btn-primary" id="next-question-link">Next question &#8594;</a>
+        </div>
+    </div>
+
+    <div class="interview-side">
+        <div class="webcam-frame">
+            <video id="webcam-video" autoplay muted playsinline></video>
+            <canvas id="webcam-canvas" style="display:none;"></canvas>
+            <span class="webcam-tag">Live read</span>
+        </div>
+        <p class="webcam-note">Frames are analyzed locally for a rough engagement/expression read — nothing is stored as video.</p>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/webcam.js') }}"></script>
+<script src="{{ url_for('static', filename='js/recorder.js') }}"></script>
+<script src="{{ url_for('static', filename='js/interview.js') }}"></script>
+{% endblock %}

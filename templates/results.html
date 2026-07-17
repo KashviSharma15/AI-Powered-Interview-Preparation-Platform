@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Rehearsal — Session results{% endblock %}
+
+{% block content %}
+<section class="results-header">
+    <p class="eyebrow">{{ session.role }} &middot; Session #{{ session.id }}</p>
+    <h1>You scored <span class="highlight">{{ avg_score }}</span> overall</h1>
+    <p class="hero-sub">Here's how each answer broke down. Review the transcripts to see exactly what landed.</p>
+</section>
+
+<section class="attempts-list">
+    {% for attempt in attempts %}
+    <div class="attempt-card">
+        <div class="attempt-header">
+            <span class="attempt-index">Q{{ loop.index }}</span>
+            <span class="attempt-score">{{ attempt.overall_score }}</span>
+        </div>
+        <p class="attempt-question">{{ attempt.question_text }}</p>
+        <p class="attempt-transcript">&ldquo;{{ attempt.transcript }}&rdquo;</p>
+        <div class="attempt-metrics">
+            <span>Content: {{ attempt.content_score }}</span>
+            <span>Keywords: {{ attempt.keyword_coverage }}%</span>
+            <span>Engagement: {{ attempt.engagement_score }}</span>
+            <span>Expression: {{ attempt.smile_score }}</span>
+            <span>Fillers: {{ attempt.filler_count }}</span>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+
+<section class="results-actions">
+    <a href="{{ url_for('index') }}" class="btn-primary">Start another session</a>
+    <a href="{{ url_for('dashboard') }}" class="btn-secondary">View progress dashboard</a>
+</section>
+{% endblock %}
